@@ -29,17 +29,5 @@
 			</div>
 
 			<!-- content -->
-			<div id="content" class="col-md-12" style="padding: 0">
-				<div class="col-md-2" style="padding: 0">
-					<div id="sideleft">
-				        <h4>Favorite <span>of the</span> Week Photos</h4>
-				        <img src="../wp-content/themes/loves/assets/images/cat.jpg" alt=""><span class="author"><i>by</i> Rhon Cusnon</span>
-				        <p><img src="../wp-content/themes/loves/assets/images/owl.jpg" alt=""><span class="author"><i>by</i> J.U.</span></p>
-				        <p><img src="../wp-content/themes/loves/assets/images/turtle.jpg" alt=""><span class="author"><i>by</i> Liza C.</span></p>
-				        <a href="#">Go to Gallery</a> 
-				    </div>
-				</div>
-			    
-	  		</div>
-	  	</div>
-	</div>
+			
+	  	

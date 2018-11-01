@@ -302,3 +302,62 @@ span.author {
     color:#b38957;
     text-shadow:0 0 2px #fffe93;
 }
+
+/*gallery*/
+.gallery h1 {
+    font-family: 'Times New Roman';
+    font-size: 36px;
+    margin: 9px 0 34px 29px;
+    color: #3a5208;
+}
+.border-gallery {
+    border: 2px solid #3a5208;
+    width: 20%;
+    margin: 0;
+}
+.content { padding: 0 30px }
+.content h3 {
+    color: #3a3a3a;
+    line-height: 31px;
+    font-size: 21px;
+    padding-bottom: 15px;
+}
+.sub-view {margin-top: 20px}
+
+/*blog*/
+.blog h1 {
+    font-family: 'Times New Roman';
+    font-size: 36px;
+    margin: 9px 0 34px 29px;
+    color: #ac0143;
+}
+.border-blog {
+    border: 2px solid #ac0143;
+    width: 15%;
+    margin: 0;
+}
+.main-view img { width: 100% }
+.content p {
+    color: #6d6d6d;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0 0 24px;
+    text-align: justify;
+}
+.sub-view img {
+    float: left;
+    width: auto;
+    margin: 0 20px 0px 0;
+}
+.blog .sub-view .col-md-12:nth-of-type(even) img {
+    float: right;
+    width: auto;
+    margin:  0 0 0 20px;
+}
+.blog .sub-view p {
+    margin-top: 20px;
+}
+.blog .sub-view .col-md-12:first-child p {
+    margin-top: 0
+}

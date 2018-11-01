@@ -46,6 +46,28 @@
 				    </div>
 				    
 			    </div>
+			    <!-- side bar -->
+			    <?php 
+			    	$args = array (
+			    		'post_type'		=> 'post',
+				    	'post_per_page' =>	1,
+				    	'category_name' => 'home',
+
+			    	);
+			    	$query = new WP_Query($args);
+			     ?>
+			    <div id="sidebar" class="col-md-3" style="padding: 0">
+			      	<ul id="featured">
+
+				    <?php while ($query->have_posts()) : $query->the_post(); ?>
+
+				    	<h4><?php the_title(); ?></h4>
+			    
+					<?php endwhile; ?>
+					
+					</ul>
+				</div>
+
 			    <div id="sidebar" class="col-md-3" style="padding: 0">
 			      	<ul id="featured">
 				        <h4>Editors Pick</h4>
