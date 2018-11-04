@@ -355,9 +355,68 @@ span.author {
     width: auto;
     margin:  0 0 0 20px;
 }
+
 .blog .sub-view p {
     margin-top: 20px;
 }
 .blog .sub-view .col-md-12:first-child p {
     margin-top: 0
+}
+
+
+
+
+/*single.php*/
+.content-header h2 {
+    color: #589300;
+    display: inline-block;
+    border-top: 2px solid #589300;
+    margin: 0 0 20px;
+    padding: 10px 0 0;
+    text-transform: uppercase;
+    line-height: 25px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+}
+.content-header h4 span {
+    display: block;
+    font-size: 16px;
+}
+.top-content_text h3 {
+    color: #fdb840;
+    font-weight: 700;
+}
+.top-content_text p {
+    line-height: 25px;
+    text-align: justify;
+}
+.content-single .sub-content .thumbnail {
+    border: 1px solid #e5e8ed; 
+    box-shadow: 3px 0 6px #d2d7e0; 
+    padding: 30px 30px 0;
+}
+.content-img img {
+    width: 35%; 
+    margin-bottom: 13px; 
+    float: left; 
+    margin-right: 20px;
+}
+.content-detail h3 {
+    margin-top: 0;
+    font-size: 21px;
+    font-weight: 600px;
+    color: #c2155f;
+}
+.content-detail p {
+    text-align: justify;
+}
+.review_star {
+    background: url(../images/diverstar_o.png) no-repeat;
+    margin-left: 39%;
+    margin-bottom: 15px;
+}
+.review_star .star {
+    background: url(../images/diverstar.png);
 }

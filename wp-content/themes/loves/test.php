@@ -33,10 +33,22 @@
 				<div class="col-md-2" style="padding: 0">
 					<div id="sideleft">
 				        <h4>Favorite <span>of the</span> Week Photos</h4>
-				        <img src="wp-content/themes/loves/assets/images/cat.jpg" alt=""><span class="author"><i>by</i> Rhon Cusnon</span>
-				        <p><img src="wp-content/themes/loves/assets/images/owl.jpg" alt=""><span class="author"><i>by</i> J.U.</span></p>
-				        <p><img src="wp-content/themes/loves/assets/images/turtle.jpg" alt=""><span class="author"><i>by</i> Liza C.</span></p>
-				        <a href="#">Go to Gallery</a> 
+				        
+				        <?php 
+				        	$args = array (
+				        		'post_type'		=> 'photos',
+				        		'post_per_page'	=> 1,
+				        		'category_name'	=> 'home'
+				        	);
+				        	$query = new WP_Query($args);
+				        	json_encode($args);
+				        ?>
+				        <?php while($query->have_posts()) : $query->the_post(); ?>
+				        	<a href="<?php the_permalink(); ?>" target="_blank"><?php the_post_thumbnail(); ?></a>
+				        	<span class="author"><i>by</i> <a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a> </span>
+				    	<?php endwhile; ?>
+
+				    	<a href="#">Go to Gallery</a> 
 				    </div>
 				</div>
 			    <div id="main" class="col-md-7" style="padding: 0"> <img class="main-img" src="wp-content/themes/loves/assets/images/bulldog.jpg" alt="main">
@@ -47,36 +59,26 @@
 				    
 			    </div>
 			    <!-- side bar -->
-			    <?php 
-			    	$args = array (
-			    		'post_type'		=> 'post',
-				    	'post_per_page' =>	1,
-				    	'category_name' => 'home',
-
-			    	);
-			    	$query = new WP_Query($args);
-			     ?>
-			    <div id="sidebar" class="col-md-3" style="padding: 0">
-			      	<ul id="featured">
-
-				    <?php while ($query->have_posts()) : $query->the_post(); ?>
-
-				    	<h4><?php the_title(); ?></h4>
-			    
-					<?php endwhile; ?>
-					
-					</ul>
-				</div>
-
 			    <div id="sidebar" class="col-md-3" style="padding: 0">
 			      	<ul id="featured">
 				        <h4>Editors Pick</h4>
-				        <li> <img src="wp-content/themes/loves/assets/images/dogs.jpg" alt=""> <em>Nulla mauris lorem vulputate vitae placerat ac et sapien</em> <span class="author"><i>by</i> Morbi Indiam</span> </li>
-				        <li> <em>If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</em> <span class="author"><i>by</i> Morbi Indiam</span> </li>
-				        <li> <img src="wp-content/themes/loves/assets/images/horse.jpg" alt="" style="width: auto; margin-right: 10%;"> <em>Vuluptate vitae placerat sapien igula augue</em> <span class="author"><i>by</i> Morbi Indiam</span> </li>
-				        <li class="last"> <em>Praesent at elit eros, sit amet congue velit. Cum sociis natoque penatibus magnis dis</em> <span class="author"><i>by</i> Morbi Indiam</span> </li>
-				    </ul>
-			    </div>
+					    <?php 
+					    	$args = array (
+					    		'post_type'  	=> 		'editor',
+					    		'post_per_page'	=> 		1,
+					    		'category_name'	=> 		'home',
+					    		'orderby'		=> 		'title',
+					    		'order'			=> 		'DSC'
+					    	);
+					    	$query = new WP_Query($args);
+					    ?>
+					    <?php while($query->have_posts()) : $query->the_post(); ?>
+					    	<li> <?php the_post_thumbnail(); ?><em><?php the_content(); ?></em> <span class="author"><i>by</i><?php the_title(); ?></span> </li>	
+
+					    <?php endwhile; ?>
+					</ul>
+				</div>
+
 			    <div id="articles" class="col-md-12" style="padding: 0">
 				    <div id="blogs" class="col-md-4" style="padding: 0">
 				        <h4>Blog</h4>
