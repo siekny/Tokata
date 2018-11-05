@@ -20,5 +20,6 @@
 		<?php
 
 	}
-	echo json_encode($datas);
+	echo json_encode($datas
+	);
  ?>

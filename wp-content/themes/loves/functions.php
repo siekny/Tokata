@@ -136,22 +136,6 @@ add_action( 'init', 'custom_taxonomy' );
 	}
 	add_action( 'init', 'custom_init_event');
 
-	// home daily update
-	function custom_init_daily() {
-	    register_post_type('daily', array(
-	    'supports' => array('title', 'editor', 'custom-fields'),
-	    'public' => true,
-	    'labels' => array(
-	      'name' => 'Daily Update',
-	      'add_new_item' => 'Add New photos',
-	      'edit_item' => 'Edit photos',
-	      'all_items' => 'All photos',
-	      'singular_name' => 'daily'
-	    ),
-	    'menu_icon' => 'dashicons-welcome-learn-more',
-	    'taxonomies'	=> array('category')
-	  ));
-	}
-	add_action( 'init', 'custom_init_daily');
+	
 
  ?>
