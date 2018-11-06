@@ -420,3 +420,8 @@ span.author {
 .review_star .star {
     background: url(../images/diverstar.png);
 }
+
+/*about page*/
+.content-box h3 {
+    margin: 0;
+}
