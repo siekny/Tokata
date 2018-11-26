@@ -12,7 +12,7 @@
 		<?php while(have_posts()) { 
 			the_post(); 
 
-			$font_size = get_field('font_size');
+			$font_size1 = get_field('ranking1');
 
 			if ($font_size ) {
 				# code...

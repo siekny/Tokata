@@ -3,7 +3,7 @@
 		<div class="wrapper container" style="padding: 0">
 			<div id="header">
 		        <div id="connect"> <a href="#" class="facebook"></a> <a href="#" class="twitter"></a> </div>
-			    <a href="" id="logo"><img src="wp-content/themes/loves/assets/images/logo.jpg" alt="logo"></a>
+			    <a href="" id="logo"><img src="<?php echo get_theme_file_uri('/assets/images/logo.jpg'); ?>" alt="logo"></a>
 
 			    <div id="navigation">
 
@@ -42,6 +42,7 @@
 				        	);
 				        	$query = new WP_Query($args);
 				        	json_encode($args);
+				        	
 				        ?>
 				        <?php while($query->have_posts()) : $query->the_post(); ?>
 				        	<a href="<?php the_permalink(); ?>" target="_blank"><?php the_post_thumbnail(); ?></a>
@@ -51,7 +52,7 @@
 				    	<a href="#">Go to Gallery</a> 
 				    </div>
 				</div>
-			    <div id="main" class="col-md-7" style="padding: 0"> <img class="main-img" src="wp-content/themes/loves/assets/images/bulldog.jpg" alt="main">
+			    <div id="main" class="col-md-7" style="padding: 0"> <img class="main-img" src="<?php echo get_theme_file_uri('/assets/images/bulldog.jpg'); ?>" alt="main">
 				    <div class="details">
 				        <h3> This website template has been designed by Free Website Templates <span class="author"><i>by</i> Pha Sellmu</span> </h3>
 				        <p> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum. </p>
@@ -84,13 +85,13 @@
 				        <h4>Blog</h4>
 				        <ul>
 				          	<li>
-				            	<p> <img src="wp-content/themes/loves/assets/images/photographer.jpg" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
+				            	<p> <img src="<?php echo get_theme_file_uri('/assets/images/photographer.jpg'); ?>" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
 				          	</li>
 				          	<li>
 				            	<p> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Vistibulum</span> Nunc eget mauris orci, ac rutrum elit. Cum sociis penatibus et magnis dis parturient montes, ascetur </p>
 				          	</li>
 				          	<li>
-				            	<p> <img src="wp-content/themes/loves/assets/images/butterfly.jpg" alt=""> <a href="#">Aenediam dolor putate vehicula</a> <span class="author"><i>by</i> Morbi Indiam</span> Proin mollis, nunc in portal lobortis magnis dis parturient monter ascetur </p>
+				            	<p> <img src="<?php echo get_theme_file_uri('/assets/images/butterfly.jpg'); ?>" alt=""> <a href="#">Aenediam dolor putate vehicula</a> <span class="author"><i>by</i> Morbi Indiam</span> Proin mollis, nunc in portal lobortis magnis dis parturient monter ascetur </p>
 				          	</li>
 				        </ul>
 				    </div>
