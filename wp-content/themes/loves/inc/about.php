@@ -15,9 +15,10 @@
 
 		?>
 		<?php while($query->have_posts()) : $query->the_post(); ?>
+			<?php echo the_post_thumbnail(); ?>
 			<hr class="border-gallery">
 			<h1><?php the_title(); ?></h1>
-			<div class="content">
+			<div class="content">thanks 
 				<?php 
 					$args1 = array (
 						'post_parent'	=>		get_the_ID(),
