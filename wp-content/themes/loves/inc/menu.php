@@ -3,7 +3,7 @@
 		<div class="wrapper container" style="padding: 0">
 			<div id="header">
 		        <div id="connect"> <a href="#" class="facebook"></a> <a href="#" class="twitter"></a> </div>
-			    <a href="" id="logo"><img src="../wp-content/themes/loves/assets/images/logo.jpg" alt="logo"></a>
+			    <a href="" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.jpg" alt="logo"></a>
 
 			    <div id="navigation">
 

@@ -12,16 +12,12 @@
 		<?php while(have_posts()) { 
 			the_post(); 
 
+
 			$font_size1 = get_field('ranking1');
-
-			if ($font_size ) {
-				# code...
-			}
-
+			$font_size2 = get_field('ranking2');
+			$font_size3 = get_field('ranking3');
 			?>
 
-
-			
 
 			<div class="content-single">
 				<div class="content-header">
@@ -47,7 +43,8 @@
 							<div class="content-detail">
 								<h3><?php the_field('title1'); ?></h3>
 								<div class="review_star" style="background-size: 80px; height: 14px; width: 80px;">
-									<div class="star" style="width: <?php echo get_field('ranking1'); ?>px; background-size: 80px; height: 14px;"></div>
+							
+									<div class="star" style="width: <?php echo $font_size1*4/5; ?>px; background-size: 80px; height: 14px;"></div>
 								</div>
 								<p><?php the_field('content1'); ?></p>
 							</div>
@@ -62,7 +59,8 @@
 							<div class="content-detail">
 								<h3><?php the_field('title2'); ?></h3>
 								<div class="review_star" style="background-size: 80px; height: 14px; width: 80px;">
-									<div class="star" style="width: <?php echo get_field('ranking2'); ?>px; background-size: 80px; height: 14px;"></div>
+						
+									<div class="star" style="width: <?php echo $font_size2*4/5;; ?>px; background-size: 80px; height: 14px;"></div>
 								</div>
 								<p><?php the_field('content2'); ?></p>
 							</div>
@@ -77,7 +75,8 @@
 							<div class="content-detail">
 								<h3><?php the_field('title3'); ?></h3>
 								<div class="review_star" style="background-size: 80px; height: 14px; width: 80px;">
-									<div class="star" style="width: <?php echo get_field('ranking3'); ?>px; background-size: 80px; height: 14px;"></div>
+							
+									<div class="star" style="width: <?php echo $font_size3*4/5;; ?>px; background-size: 80px; height: 14px;"></div>
 								</div>
 								<p><?php the_field('content3'); ?></p>
 							</div>
