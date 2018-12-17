@@ -1,12 +1,5 @@
 <?php get_header(); ?>
 
-<div class="wrap">
-	<div class="wrapper container" style="padding: 0">
-		<div id="header" style="width: 100%">
-		    <div id="connect"> <a href="#" class="facebook"></a> <a href="#" class="twitter"></a></div>
-			<a id="logo"><img src="../../wp-content/themes/loves/assets/images/logo.jpg" alt="logo"></a>
-		</div>
-	
 
 		<!-- content -->
 		<?php while(have_posts()) { 

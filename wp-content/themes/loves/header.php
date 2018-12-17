@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="wrap">
-		<div class="wrapper container" style="padding: 0">
+		<div class="wrapper" style="padding: 0">
 			<div id="header">
 		        <div id="connect"> </div>
 			    <a href="" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.jpg" alt="logo"></a>
