@@ -96,6 +96,26 @@ add_action( 'init', 'custom_taxonomy' );
 	}
 	add_action( 'init', 'custom_init_editor');
 
+	// home entertainment
+	function custom_init_entertainment() {
+	   register_post_type('entertain', array(
+	    'supports' => array('title', 'editor', 'thumbnail'),
+	    'public' => true,
+	    'labels' => array(
+	      'name' => 'Entertainment',
+	      'add_new_item' => 'Add New Entertainment',
+	      'edit_item' => 'Edit entertain',
+	      'all_items' => 'All entertain',
+	      'singular_name' => 'post'
+	    ),
+	    'menu_icon' => 'dashicons-welcome-learn-more',
+	    'taxonomies'	=> array('category')
+	  ));
+
+
+	}
+	add_action( 'init', 'custom_init_entertainment');
+
 	// home blog
 	function custom_init_blog() {
 	   register_post_type('blog', array(
@@ -120,6 +140,8 @@ add_action( 'init', 'custom_taxonomy' );
 	function custom_init_event() {
 	   register_post_type('event', array(
 	    'supports' => array('title', 'editor', 'thumbnail'),
+	    'rewrite' => array('slug' => 'event'),
+	    'has_archive' => true,
 	    'public' => true,
 	    'labels' => array(
 	      'name' => 'New Event',

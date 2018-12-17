@@ -1,6 +1,5 @@
 <?php /* Template Name: About Template */ ?>
 <?php get_header(); ?>
-<?php include('menu.php') ?>
 
 <div class="container" style="padding: 0">
 	<div class="gallery">
