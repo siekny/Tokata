@@ -92,19 +92,25 @@
 
 			    <div id="articles" class="col-md-12" style="padding: 0">
 				    <div id="blogs" class="col-md-4" style="padding: 0">
+
+				    	<?php 
+				    		$args = array(
+				    			'post_type'		=>		'blog',
+				    			'post_per_page'	=>		1,
+				    			'category_name'	=>		'blog',
+				    			'order'			=>		'ASC',
+				    		);
+				    		$query = new WP_Query($args);
+				    	?>
 				        <h4>Blog</h4>
 				        <ul>
-				          	<li>
-				            	<p> <img src="wp-content/themes/loves/assets/images/photographer.jpg" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
-				            	<p> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/photographer.jpg" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
-				          	</li>
-				          	<li>
-				            	<p> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Vistibulum</span> Nunc eget mauris orci, ac rutrum elit. Cum sociis penatibus et magnis dis parturient montes, ascetur </p>
-				          	</li>
-				          	<li>
-				            	
-				            	<p> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/butterfly.jpg" alt=""> <a href="#">Aenediam dolor putate vehicula</a> <span class="author"><i>by</i> Morbi Indiam</span> Proin mollis, nunc in portal lobortis magnis dis parturient monter ascetur </p>
-				          	</li>
+				        	<?php while($query->have_posts()) : $query->the_post(); ?>
+					          	<li>
+
+					            	<p><?php the_post_thumbnail(); ?><a><?php the_title(); ?></a><?php the_content(); ?></p>
+					          	</li>
+					        <?php endwhile; ?>
+				          	
 				        </ul>
 				    </div>
 
@@ -133,24 +139,24 @@
 				    </div>
 				    <div id="updates" class="col-md-4" style="padding: 0">
 				        <h4>Daily Updates</h4>
-				        <p>You can remove any link to our website from this website template, you're free to use this website template without linking back to us.</p>
-				        <form action="#" method="post">
-				          	<input type="text" value="Name" class="txtfield" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}">
-				          	<input type="text" value="Enter Email Address" class="txtfield" onblur="javascript:if(this.value==''){this.value=this.defaultValue;}" onfocus="javascript:if(this.value==this.defaultValue){this.value='';}">
-				          	<input type="submit" value="" class="button">
-				        </form>
-				        <ul class="navigation">
-				          	<li class="selected"><a href="index.html">home</a></li>
-				          	<li><a href="news.html">news &amp; events</a></li>
-				          	<li><a href="about.html">about</a></li>
-				          	<li><a href="gallery.html">gallery</a></li>
-				          	<li><a href="blog.html">blog</a></li>
-				          	<li><a href="contacts.html">contact us</a></li>
-				        </ul>
+
+				        <?php 
+				        	$args = array(
+				        		'post_type'			=>			'project',
+				        		'post_per_page'		=>			1,
+				        		'category_name'		=>			'home',
+				        	);
+				        	$query = new WP_Query($args);
+				        ?>
+				        <?php while($query->have_posts()) : $query->the_post(); ?>
+				        	<?php the_content(); ?>
+				        <?php endwhile; ?>
 				    </div>
 	    		</div>
 	  		</div>
 	  	</div>
 	</div>
+
+	<!--  -->
 
 	

@@ -7,43 +7,36 @@
 		<h1>Blog</h1>
 		<div class="content">
 			<div class="col-md-9" style="padding-left: 0; padding-right: 20px">
-				<h3>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</h3>
-			    <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-				<div class="view">
-					<div class="main-view">
-						<img src="../wp-content/themes/loves/assets/images/okunoshima.jpg"alt="Tokata">
+				<?php 
+					$args = array(
+						'post_type'		=> 		'blog',
+						'post_per_page'	=>		1,
+						'category_name'	=>		'blog',
+						'order'			=>		'ASC',
+					);
+					$query = new WP_Query($args);
+				?>
+				<?php while($query->have_posts()) : $query->the_post(); ?>
+					<div class="blog-box">
+						<h3><?php the_title(); ?></h3>
+						<?php echo the_post_thumbnail(); ?>
+						<span style="color: #9a9292"><?php the_time('d-M-Y'); ?></span>
+						<p><?php the_content(); ?></p>
 					</div>
-					<div class="sub-view">
-						<div class="col-md-12" style="padding: 0">
-							<img src="../wp-content/themes/loves/assets/images/rabit1.jpg" alt="Tokata 1">
-							<div class="detail">
-								<p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-							</div>
-						</div>
-						<div class="col-md-12" style="padding: 0">
-							<img src="../wp-content/themes/loves/assets/images/rabit2.jpg" alt="Tokata 2">
-							<div class="detail">
-								<p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-							</div>
-						</div>
-						<div class="col-md-12" style="padding: 0">
-							<img src="../wp-content/themes/loves/assets/images/animal3.jpg" alt="Tokata 1">
-							<div class="detail">
-								<p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-							</div>
-						</div>
-						<div class="col-md-12" style="padding: 0">
-							<img src="../wp-content/themes/loves/assets/images/animal4.jpg" alt="Tokata 2">
-							<div class="detail">
-								<p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-							</div>
-						</div>
-					</div>
-			    </div>
+				<?php endwhile; ?>
 			</div>
-			<div class="col-md-3" style="padding-right: 0; padding-left: 25px">
-				<h3>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</h3>
-			    <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
+			<!-- side bar -->
+		    <div id="sidebar" class="col-md-3">
+		      	<div class="sidebar-box">
+		      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s1.gif" alt="main">
+		      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s2.gif" alt="main">
+		      	</div>
+		      	<div class="sidebar-box">
+		      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s3.jpg" alt="main">
+		      	</div>
+		      	<div class="sidebar-box">
+		      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s4.jpg" alt="main">
+		      	</div>
 			</div>
 		</div>
     </div>

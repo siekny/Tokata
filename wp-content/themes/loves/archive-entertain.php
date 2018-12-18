@@ -35,9 +35,9 @@
 			        		<a href="<?php the_permalink(); ?>">
 			        			<?php echo the_post_thumbnail(); ?>
 			        			<span><?php echo the_title(); ?></span>
-			        			<p style="color: #99A6C4;"><?php echo get_the_date('d-M-Y'); ?></p>
+			        			<p style="color: #99A6C4;"><?php echo get_the_time('d-M-Y'); ?> <?php echo get_the_time(); ?></p>
 			        			<hr>
-			        			<?php echo the_content(); ?>
+			        			<?php echo wp_trim_words(get_the_content(), 4, '...' ); ?>
 			        		</a>
 			        	</div>
 
