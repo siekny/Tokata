@@ -76,31 +76,14 @@ add_action( 'init', 'custom_taxonomy' );
 	}
 	add_action( 'init', 'custom_init');
 
-	// home right sidebar
-	function custom_init_editor() {
-	   register_post_type('editor', array(
-	    'supports' => array('title', 'editor', 'thumbnail'),
-	    'public' => true,
-	    'labels' => array(
-	      'name' => 'Editor Sidebar',
-	      'add_new_item' => 'Add New photos',
-	      'edit_item' => 'Edit photos',
-	      'all_items' => 'All photos',
-	      'singular_name' => 'editor'
-	    ),
-	    'menu_icon' => 'dashicons-welcome-learn-more',
-	    'taxonomies'	=> array('category')
-	  ));
-
-
-	}
-	add_action( 'init', 'custom_init_editor');
 
 	// home entertainment
 	function custom_init_entertainment() {
 	   register_post_type('entertain', array(
 	    'supports' => array('title', 'editor', 'thumbnail'),
 	    'public' => true,
+	    'rewrite' => array('slug' => 'entertain'),
+	    'has_archive' => true,
 	    'labels' => array(
 	      'name' => 'Entertainment',
 	      'add_new_item' => 'Add New Entertainment',
@@ -157,6 +140,18 @@ add_action( 'init', 'custom_taxonomy' );
 
 	}
 	add_action( 'init', 'custom_init_event');
+
+
+	/* Returns a "Continue Reading" link for excerpts, with 'nofollow' set */
+function your_theme_continue_reading_link() {
+    return ' <a href="'. get_permalink() . '" rel="nofollow">' .
+        '<span class="meta-nav">&rarr;</span> Continue reading</a>';
+}
+/* Replaces "[...]" (appended to automatically generated excerpts) */
+function your_theme_auto_excerpt_more( $more ) {
+    return ' &hellip;' . your_theme_continue_reading_link();
+}
+add_filter( 'excerpt_more', 'your_theme_auto_excerpt_more' );
 
 
 	/*copyright*/

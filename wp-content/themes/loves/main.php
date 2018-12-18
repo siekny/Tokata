@@ -1,8 +1,6 @@
 <!-- div wrap -->
 <!-- div wrapper container -->
 
-	
-
 			<!-- content -->
 			<div id="content">
 				<div class="col-md-2" style="padding: 0">
@@ -26,64 +24,70 @@
 				    </div>
 				</div>
 			  
-			    <div id="main" class="col-md-7" style="padding: 0"> <img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bulldog.jpg" alt="main">
+			    <div id="main" class="col-md-7"> 
+			    	<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/bulldog.jpg" alt="main">
 				    <div class="details">
 				       
-				        <h3><a href="<?php echo site_url('/event'); ?>" target="_blank">Entertainment</a></h3>
-				        <div style="width: 35%; float: left;">
-				        	<img src="<?php echo get_template_directory_uri(); ?>/assets/images//cat6.jpg" style="width: 100%; height: auto;">
-				        	<div style="background: #38C378; padding: 10px 20px; color: #fff; font-size: 14px">
-				        		មកដឹងលទ្ធផលសរុប MAMA ២០១៨  និងការសម្ដែងទាក់ភ្នែកជាងគេនៃថ្ងៃចុងក្រោយ
-				        	</div>
-				        </div>
-				        <?php 
-				        	$args = array(
-				        		'post_type'		=>		'entertain',
-					        	'post_per_page'	=>		1,
-					        	'category_name'	=>		'home',
-					        	'orderby'		=> 		'DSC'
-				        	);
-				        	$query = new WP_Query($args);
-				        ?>
+				        <h3><a href="<?php echo site_url('/entertain'); ?>" target="_blank">Entertainment</a></h3>
+				        <div class="details-inner">
+				        	
 				        
-
-				        <div class="entertainment-right">
-
-				        	<?php while($query->have_posts()) : $query->the_post(); ?>
-
-					        	<div class="entertainment-right-box">
-
-					        		<?php echo the_post_thumbnail(); ?>
-					        		<p><?php echo the_title(); ?></p>
+					        <div style="width: 35%; float: left;">
+					        	<img src="<?php echo get_template_directory_uri(); ?>/assets/images//cat6.jpg" style="width: 100%; height: auto;">
+					        	<div style="background: #38C378; padding: 10px 20px; color: #fff; font-size: 14px">
+					        		មកដឹងលទ្ធផលសរុប MAMA ២០១៨  និងការសម្ដែងទាក់ភ្នែកជាងគេនៃថ្ងៃចុងក្រោយ
 					        	</div>
-					        <?php endwhile; ?>
+					        </div>
+					        <?php 
+					        	$args = array(
+					        		'post_type'		=>		'entertain',
+						        	'post_per_page'	=>		1,
+						        	'category_name'	=>		'home',
+						        	'orderby'		=> 		'DSC'
+					        	);
+					        	$query = new WP_Query($args);
+					        ?>
+					        
 
-				        </div>
+					        <div class="entertainment-right">
+					        	<?php if ( have_posts() ): $postCount = 0; ?>
+						        	<?php while($query->have_posts()) : $query->the_post(); ?>
+						        		
+						        		<?php 
 
-				    </div>
+						        			if ($postCount < 8) {	?>
+						        				<?php $postCount++; ?>
+												<div class="entertainment-right-box">
+									        		<a href="<?php the_permalink(); ?>">
+									        			<?php echo the_post_thumbnail(); ?>
+									        			<p><?php echo the_title(); ?></p>
+									        		</a>
+									        	</div>
 
-				    
+											<?php } #end if 
+						        		?>
+							        	
+							        <?php endwhile; ?>
+							    <?php endif; ?>
+
+						    </div>
+						</div>
+
+					</div>
+
 			    </div>
 			    <!-- side bar -->
-			    <div id="sidebar" class="col-md-3" style="padding: 0">
-			      	<ul id="featured">
-				        <h4>Editors Pick</h4>
-					    <?php 
-					    	$args = array (
-					    		'post_type'  	=> 		'editor',
-					    		'post_per_page'	=> 		1,
-					    		'category_name'	=> 		'home',
-					    		'orderby'		=> 		'title',
-					    		'order'			=> 		'DSC'
-					    	);
-					    	$query = new WP_Query($args);
-					    	json_encode($args);
-					    ?>
-					    <?php while($query->have_posts()) : $query->the_post(); ?>
-					    	<li> <?php the_post_thumbnail(); ?><em><?php the_content(); ?></em> <span class="author"><i>by</i><?php the_title(); ?></span> </li>	
-
-					    <?php endwhile; ?>
-					</ul>
+			    <div id="sidebar" class="col-md-3">
+			      	<div class="sidebar-box">
+			      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s1.gif" alt="main">
+			      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s2.gif" alt="main">
+			      	</div>
+			      	<div class="sidebar-box">
+			      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s3.jpg" alt="main">
+			      	</div>
+			      	<div class="sidebar-box">
+			      		<img class="main-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/s4.jpg" alt="main">
+			      	</div>
 				</div>
 
 			    <div id="articles" class="col-md-12" style="padding: 0">
@@ -91,7 +95,7 @@
 				        <h4>Blog</h4>
 				        <ul>
 				          	<li>
-				            	<p> <img src="wp-content/themes/loves/assets/images/photographer.jpg" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p
+				            	<p> <img src="wp-content/themes/loves/assets/images/photographer.jpg" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
 				            	<p> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/photographer.jpg" alt=""> <a href="#">Mauris iaculis neque</a> <span class="author"><i>by</i> Morbi Indiam</span> Fusce dapibus vitae elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada </p>
 				          	</li>
 				          	<li>
@@ -103,23 +107,29 @@
 				          	</li>
 				        </ul>
 				    </div>
+
+				    <?php 
+				    	$args = array(
+				    		'post_type'		=>		'event',
+				    		'post_per_page'	=>		1,
+				    		'category_name'	=>		'newsevent',
+				    		'order'			=>		'ASC',
+				    	);
+				    	$query = new WP_Query($args);
+
+				    ?>
 				    <div id="news" class="col-md-4" style="padding: 0">
 				        <h4>News &amp; Events</h4>
-				        <ul>
-				          	<li> <a href="#">Jan</a> <span class="day">05 - 06</span>
-				            	<p>If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-				          	</li>
-				          	<li> <a href="#">Mar</a> <span class="day">15</span>
-				            	<p>Justo In a libero</p>
-				            	<span class="day">17-20</span>
-				            	<p>Praesent at elit eros <br>
-				              sit amet congue velit</p>
-				          	</li>
-				          	<li> <a href="#">APR</a> <span class="day">20</span>
-				            	<p>Nulla ultricies lacinia fringilla <br>
-				              Donec mauris lorem</p>
-				          	</li>
-				        </ul>
+				        	<ul>
+			        		<?php while($query->have_posts()) : $query->the_post(); ?>
+					        	<li> 
+					        		<a href=""><?php the_time('M'); ?></a> 
+					        		<span class="day"><?php the_time('d - Y') ?></span>
+				            		<p style="margin-bottom: 15px;"><?php echo the_title(); ?></p>
+				          		</li>
+				        	<?php endwhile; ?>
+			        	</ul>
+				        
 				    </div>
 				    <div id="updates" class="col-md-4" style="padding: 0">
 				        <h4>Daily Updates</h4>
