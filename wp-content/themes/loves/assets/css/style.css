@@ -3,8 +3,8 @@
     height: auto;
     margin: 0 auto;
     padding: 0 0 24px;
-    outline: 1px solid #e0e0e0;
-/*    margin-top: 5%;*/
+     outline: unset !important; 
+    /*    margin-top: 5%;*/
 }
 #header {
     display: inline-block;
@@ -38,6 +38,10 @@
     line-height: 26px;
     margin: 0 10px;
     text-align: center;
+}
+
+.current-menu-item a, .current_page_item a, .active a {
+    background: #A6E5F6 !important;
 }
 #navigation a {
     color: #393939;

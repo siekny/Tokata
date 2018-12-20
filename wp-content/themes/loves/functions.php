@@ -209,6 +209,31 @@ add_filter( 'excerpt_more', 'your_theme_auto_excerpt_more' );
     // include sub post
 	require_once "sub_post.php";
 
+	/**
+ * Adds "Import" button on module list page
+ */
+ function addCustomImportButton()
+{
+    global $current_screen;
+
+    // Not our post type, exit earlier
+    // You can remove this if condition if you don't have any specific post type to restrict to. 
+    if ('module' != $current_screen->post_type) {
+        return;
+    }
+
+    ?>
+        <script type="text/javascript">
+            jQuery(document).ready( function($)
+            {
+                jQuery(jQuery(".wrap h2")[0]).append("<a  id='doc_popup' class='add-new-h2'>Import</a>");
+            });
+        </script>
+    <?php
+}
+
+add_action('admin_head-edit.php','addCustomImportButton');
+
 	
 
  ?>
