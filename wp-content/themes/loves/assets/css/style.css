@@ -598,3 +598,40 @@ span.author {
     margin: 0;
     color: #AC0143;
 }
+
+/*comment*/
+.content-comment {
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,.2);
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+}
+.content-comment img {
+    width: 5%;
+    border-radius: 50%;
+    float: left;
+}
+.content-comment input[type="email"] {
+    width: 90% !important;
+    float: right !important;
+    margin-bottom: 10px;
+}
+.content-comment textarea {
+    width: 90% !important;
+    float: right !important;
+
+}
+.content-comment input[type="submit"] {
+    background: #F27E7E;
+    color: #fff;
+    float: right;
+    clear: both;
+    border-radius: 0;
+    border: 0;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+.content-comment input[type="submit"]:hover {
+    background: #f09f9f;
+}
