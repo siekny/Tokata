@@ -1,0 +1,23 @@
+[24-Dec-2018 02:36:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/inc/gallery.php on line 51
+[24-Dec-2018 04:14:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_time() in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/page-api-event.php:14
+Stack trace:
+#0 /home/sieknyh3/public_html/tokata/wp-includes/template-loader.php(74): include()
+#1 /home/sieknyh3/public_html/tokata/wp-blog-header.php(19): require_once('/home/sieknyh3/...')
+#2 /home/sieknyh3/public_html/tokata/index.php(17): require('/home/sieknyh3/...')
+#3 {main}
+  thrown in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/page-api-event.php on line 14
+[24-Dec-2018 04:15:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_time() in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/page-api-event.php:14
+Stack trace:
+#0 /home/sieknyh3/public_html/tokata/wp-includes/template-loader.php(74): include()
+#1 /home/sieknyh3/public_html/tokata/wp-blog-header.php(19): require_once('/home/sieknyh3/...')
+#2 /home/sieknyh3/public_html/tokata/index.php(17): require('/home/sieknyh3/...')
+#3 {main}
+  thrown in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/page-api-event.php on line 14
+[24-Dec-2018 04:16:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_time() in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/page-api-event.php:14
+Stack trace:
+#0 /home/sieknyh3/public_html/tokata/wp-includes/template-loader.php(74): include()
+#1 /home/sieknyh3/public_html/tokata/wp-blog-header.php(19): require_once('/home/sieknyh3/...')
+#2 /home/sieknyh3/public_html/tokata/index.php(17): require('/home/sieknyh3/...')
+#3 {main}
+  thrown in /home/sieknyh3/public_html/tokata/wp-content/themes/loves/page-api-event.php on line 14
+[25-Dec-2018 04:42:32 UTC] PHP Warning:  Parameter 2 to qtranxf_postsFilter() expected to be a reference, value given in /home/sieknyh3/public_html/tokata/wp-includes/class-wp-hook.php on line 286
